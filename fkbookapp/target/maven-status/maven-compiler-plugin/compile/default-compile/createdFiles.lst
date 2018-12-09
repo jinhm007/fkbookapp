@@ -1,0 +1,11 @@
+com/example/fkbookapp/service/BookService.class
+com/example/fkbookapp/service/UserService.class
+com/example/fkbookapp/controller/UserController.class
+com/example/fkbookapp/mapper/BookMapper.class
+com/example/fkbookapp/controller/BookController.class
+com/example/fkbookapp/model/User.class
+com/example/fkbookapp/service/impl/UserServiceImpl.class
+com/example/fkbookapp/Application.class
+com/example/fkbookapp/model/Book.class
+com/example/fkbookapp/service/impl/BookServiceImpl.class
+com/example/fkbookapp/mapper/UserMapper.class

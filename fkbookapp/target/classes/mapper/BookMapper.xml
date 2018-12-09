@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.example.fkbookapp.mapper.BookMapper">
+
+    <select id="findAll" resultType="com.example.fkbookapp.model.Book">
+    select * from tb_book;
+  </select>
+
+    <!--添加图书接口-->
+    <insert id="addBookInfo" parameterType="com.example.fkbookapp.model.Book">
+        insert into
+        tb_book (name,author,publicationdate,publication,price,image,remark)
+        values (#{name},#{author},#{publicationdate},#{publication},#{price},#{image},#{remark});
+    </insert>
+
+
+    <!--修改图书接口-->
+    <update id="updateBookInfo" parameterType="com.example.fkbookapp.model.Book">
+        update  tb_book
+        <trim prefix="SET" suffixOverrides=",">
+        <if test="name!=null">
+            name = #{name},
+        </if>
+            <if test="null != publication and '' !=publication">
+                publication=#{publication},
+            </if>
+            <if test="null != remark and '' !=remark">
+                remark=#{remark},
+            </if>
+        </trim>
+        where id=#{id,jdbcType=INTEGER}
+    </update>
+</mapper>
